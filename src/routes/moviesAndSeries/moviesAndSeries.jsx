@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { Pagination } from "react-bootstrap";
-import "./MoviesAndSeries.css";
+import "./moviesAndSeries.css";
 import Content from "../../components/content/content";
 import Menu from "../../components/menu/menu";
 import Footer from "../../components/footer/footer";
