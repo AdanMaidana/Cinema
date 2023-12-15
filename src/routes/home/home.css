@@ -1,0 +1,33 @@
+#home {
+  padding-top: 80px;  
+}
+
+.home-img {
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  overflow: hidden; 
+  border-radius: 5px;
+  border: 3px solid rgb(255, 255, 255);
+}
+
+.home-img img {   
+  height: 100%;
+  width: 100%;
+  transition: all .6s ease;
+}
+
+.home-content img:hover {
+  cursor: pointer;
+  transform: scale(1.10);
+}
+
+.home-title {
+  color: white;
+  text-align: center;
+  height: 100px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  user-select: text;
+  width: 100%;
+}

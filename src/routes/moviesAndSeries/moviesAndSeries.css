@@ -1,0 +1,23 @@
+#moviesAndSeries {
+  padding-top: 80px;  
+}
+
+.pagination {
+  margin-top:1rem;
+  margin-bottom: 3rem;
+}
+
+#pagination-active {
+  background-color: #00ff11;
+  color: rgb(0, 0, 0);
+}
+
+.pagination .page-item .page-link {
+  background-color: #105333;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: rgb(3, 47, 37);
+}

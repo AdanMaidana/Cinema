@@ -1,0 +1,118 @@
+/*CONTENEDOR DEL CONTENIDO*/
+#content {
+  margin: 0;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+
+/*ENCABEZADO DEL CONTENIDO*/
+.header {
+  margin: 0;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 1px;
+}
+
+/*CONTENEDOR DE LA IMAGEN Y TITULO DEL CONTENIDO*/
+#content figure {
+  width: 300px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 1px solid white;
+  transition: .3s ease;
+}
+
+#content figure:hover {
+  box-shadow: 0px 0px 15px rgb(10, 221, 189);
+}
+/*CONTENEDOR DE LA IMAGEN DEL CONTENIDO*/
+#content .content-img {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0; 
+}
+
+/*IMAGEN DEL CONTENIDO*/
+#content img {   
+  height: 100%;
+  width: 100%;
+  transition: all .6s ease;
+  border-radius: 15px 15px 0 0;
+}
+#content img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+
+/*TITULO DEL CONTENIDO*/
+#content figcaption {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  user-select: text;
+  height: 98px;
+  border-radius: 0 0 15px 15px;
+  text-wrap: balance;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #029074;
+}
+
+
+/*MODAL*/
+.modal-content {
+  background-color: rgb(15, 73, 73) !important;
+  border: 1px solid rgb(255, 255, 255) !important;
+}
+
+/*BOTON PARA CERRAR MODAL*/
+#modal-close {
+  cursor: pointer;
+  background-color: rgb(31, 31, 31);
+  transition: .3s ease;
+}
+#modal-close:hover {
+  background-color: rgb(255, 0, 0);
+  transition: .3s ease;
+}
+
+#modal-close path {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+#modal-close:hover path {
+  transform: scale(0.7);
+}
+
+/*IMAGEN DEL MODAL*/
+.modal-body img {
+  width: 100%;
+  max-height: 250px;
+}
+
+
+/*DETALLES DEL CONTENIDO DEL MODAL*/
+.details {
+  color: #ffffff;
+}
+.details span {
+  color: #00ff88;
+  font-style: normal;
+}
+
+
+/*ESTRELLA DE PUNTUACION EN EL MODAL*/
+#rating-star {
+  margin-left: -8px;
+}

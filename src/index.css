@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box;
+  min-width: 500px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand' !important;
+  background-color: rgb(16, 16, 16) !important;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  font-family: inherit;
+}

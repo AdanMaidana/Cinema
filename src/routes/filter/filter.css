@@ -1,0 +1,58 @@
+/*CONTENEDOR PRINCIPAL DE TODA LA PAGINA*/
+#filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding-top: 80px; 
+}
+
+/*CONTENEDOR DE LOS FILTROS*/
+#filter-form {
+  max-width: 400px;
+  width: 100%;
+  padding: 1rem;
+  margin: 20px auto;
+  background-color: #041d2b ;
+  border:  5px solid rgb(36, 194, 238);
+}
+
+/*TITULOS DE CADA UNO DE LOS FILTROS*/
+#filter-form .form-label {
+  color: rgb(61, 71, 255);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/*FILTRO DE BUSQUEDA POR EL TITULO*/
+#title-search {
+  width: 100%;
+}
+
+/*FILTRO DE BUSQUEDA POR EL AÑO*/
+#year-search {
+  width: 100px;
+}
+
+/*FILTRO DE BUSQUEDA POR LOS GENEROS*/
+#genre-filter {
+  width: 100%;
+  margin-top: 1rem;
+  color: white;
+}
+
+/*CONTENEDOR DE LOS CHECKBOX DEL FILTRO DE GENEROS*/
+#checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+/*CADA CHECKBOX DEL FILTRO GENEROS*/
+.genre-checkbox {
+  width: 150px;
+  padding: 0;
+  font-size: .9rem;
+}
+

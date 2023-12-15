@@ -1,0 +1,142 @@
+#welcome {
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 1.5rem;
+  min-height: 100%;
+  width: 100%;
+}
+
+/*WELCOME SECCIÓN*/
+#introduction {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+#introduction h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+#cinema {
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  letter-spacing: 5px;
+  background: linear-gradient(to left, #00ff77, #00f2ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 2px transparent;
+}
+
+#introduction p {
+  font-size: 1.3rem;
+  margin: 0;
+  text-wrap: balance;
+}
+
+#startNow {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgb(29, 184, 37);
+  text-decoration: none;
+  padding: 1rem;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: transform .9s ease;
+  border-radius: 5px;
+  border: 3px solid rgb(1, 186, 72);
+  box-shadow: 0 0 10px rgb(0, 255, 170);
+  transition: all .3s ease;
+}
+
+#startNow:hover {
+  background-color: rgb(10, 92, 105);
+  border-color: white;
+  color: white;
+  box-shadow: 0 0 10px rgb(0, 221, 255);
+}
+
+/*SECCION CAROUSEL*/
+.carousel {
+  height: 50%;
+  max-width: 400px;
+  max-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel img {
+  border: 3px solid white;
+  border-radius: 5px;
+  height: 50vh;
+  max-width: 300px;
+}
+
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next,
+.carousel .carousel-indicators {
+  display: none;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (width >=768px) {
+  #welcome {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    column-gap: 1rem;
+  }
+
+  #introduction {
+    height: 100%;
+    width: 60%;
+    row-gap: 2.5rem;
+  }
+
+  #introduction h1 {
+    font-size: 3.5rem;
+  }
+
+  #introduction p {
+    font-size: 1.5rem;
+  }
+
+  #startNow {
+    font-size: 1.5rem;
+  }
+
+  .carousel {
+    height: auto;
+    width: 40%;
+  }
+
+  .carousel img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (width >=992px) {
+  #introduction h1 {
+    font-size: 5rem;
+  }
+
+  #introduction p {
+    font-size: 2rem;
+  }
+
+  #startNow {
+    font-size: 2rem;
+  }
+}
