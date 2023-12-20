@@ -3,7 +3,6 @@ import { Pagination } from "react-bootstrap";
 import "./moviesAndSeries.css";
 import Content from "../../components/content/content";
 import Menu from "../../components/menu/menu";
-import Footer from "../../components/footer/footer";
 import { Spinner } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -168,13 +167,11 @@ export default function MoviesAndSeries({ section }) {
 
             {/* Paginación */}
             {content.length > 0 && (
-              <Pagination className="justify-content-center" size="lg">
+              <Pagination className="justify-content-center">
                 {generatePaginationItems()}
               </Pagination>
             )}
-
-            {/* Footer */}
-            <Footer />
+        
           </>
         )}
       </section>

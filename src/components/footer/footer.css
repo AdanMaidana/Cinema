@@ -1,14 +1,10 @@
-#footer {
-  width: 100%;
-}
-
 #footer p {
   color: rgb(156, 156, 156);
   padding: .5rem;
-  font-size: 1.1rem;
   background-color: #093227;
   margin: 0;
   text-align: center;
+  text-wrap: balance;
 }
 
 #footer a {

@@ -4,7 +4,6 @@ import { Carousel } from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 
-
 export default function Welcome() {
   const [popularMovies, setPopularMovies] = useState([]);
   const [popularTv, setPopularTv] = useState([]);
@@ -103,6 +102,7 @@ export default function Welcome() {
 
 
   return (
+
     <section id="welcome">
 
       <div id="introduction">
@@ -111,14 +111,19 @@ export default function Welcome() {
         </h1>
         <p>
           Aquí encontraras las mejores{" "}
-          <span className="text-warning fw-bold">peliculas</span> y{" "}
-          <span className="text-warning fw-bold">series</span> tanto nuevas
+          <span className="text-warning">peliculas</span> y{" "}
+          <span className="text-warning">series</span> tanto nuevas
           como clásicas.
         </p>
-        <Link id="startNow" to="/home">Empezar a ver</Link>
+        <Link id="startNow" className="btn btn-warning border border-2 border-light" to="/home">Empezar a ver</Link>
       </div>
+
       <AutoCarousel moviePosters={moviePosters} tvPosters={tvPosters} />
 
     </section>
+
+
+
+
   );
 }

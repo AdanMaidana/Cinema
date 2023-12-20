@@ -2,7 +2,6 @@ import "./home.css";
 import { useState, useEffect } from "react";
 import Menu from "../../components/menu/menu";
 import Content from "../../components/content/content";
-import Footer from "../../components/footer/footer";
 import { Spinner } from 'react-bootstrap';
 
 export default function Home() {
@@ -96,8 +95,7 @@ export default function Home() {
           <span className="text-light ms-2 fs-5">Cargando</span>
         </div>
       }
-      {popularMovies.length > 0 && popularSeries.length > 0 && !homeLoading &&
-        <Footer />}
+     
     </section>
   );
 }

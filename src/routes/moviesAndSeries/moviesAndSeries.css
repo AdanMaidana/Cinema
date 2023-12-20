@@ -2,11 +2,6 @@
   padding-top: 80px;  
 }
 
-.pagination {
-  margin-top:1rem;
-  margin-bottom: 3rem;
-}
-
 #pagination-active {
   background-color: #00ff11;
   color: rgb(0, 0, 0);
@@ -16,6 +11,16 @@
   background-color: #105333;
   color: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
+  padding: .5rem 1rem; 
+}
+
+
+
+@media screen and (width >= 992px) {
+  .pagination .page-item .page-link {
+    font-size: 1.5rem;
+    padding: .7rem 1.4rem;
+  }
 }
 
 .pagination .page-item .page-link:hover {

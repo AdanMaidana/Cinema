@@ -1,8 +1,8 @@
 html {
   box-sizing: border-box;
-  min-width: 500px;
   scroll-behavior: smooth;
-  height: 100%;
+  min-width: 280px;
+
 }
 
 body {
@@ -10,13 +10,9 @@ body {
   padding: 0;
   font-family: 'Quicksand' !important;
   background-color: rgb(16, 16, 16) !important;
-  overflow-x: hidden;
-  height: 100%;
+
 }
 
-#root {
-  height: 100%;
-}
 
 *,
 *::after,

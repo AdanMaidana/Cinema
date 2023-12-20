@@ -4,7 +4,6 @@ import Menu from "../../components/menu/menu";
 import "./filter.css";
 import Content from "../../components/content/content";
 import { Pagination } from "react-bootstrap";
-import Footer from "../../components/footer/footer";
 import { Spinner } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -593,7 +592,6 @@ export default function Filter({ section }) {
               <Pagination className="justify-content-center" size="lg">{generatePaginationItems()}</Pagination>
             )}
 
-            <Footer />
           </>
         )}
 
