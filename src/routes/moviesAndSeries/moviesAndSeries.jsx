@@ -28,7 +28,7 @@ export default function MoviesAndSeries({ section }) {
           setTimeout(() => {
             setContent(data.results);
             setTotalPages(data.total_pages);
-          }, 1000);
+          }, 500);
 
         } else if (response.status === 401) {
           console.log("Error de login");

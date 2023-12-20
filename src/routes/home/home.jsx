@@ -62,7 +62,7 @@ export default function Home() {
     }
     setTimeout(() => {
       setHomeLoading(false);
-    }, 1000);
+    }, 500);
   }
 
   useEffect(() => {

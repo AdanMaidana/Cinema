@@ -1,8 +1,9 @@
 import "./welcome.css";
 import { Link } from "react-router-dom";
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Spinner } from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
+
 
 export default function Welcome() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -67,6 +68,7 @@ export default function Welcome() {
 
   const AutoCarousel = ({ moviePosters, tvPosters }) => {
     const [index, setIndex] = useState(0);
+    const [imagesLoaded, setImagesLoaded] = useState(false);
 
     useEffect(() => {
       const intervalId = setInterval(() => {
@@ -78,14 +80,37 @@ export default function Welcome() {
       };
     }, [moviePosters.length, tvPosters.length]);
 
+    useEffect(() => {
+      // Creamos un array de objetos Image para manejar la carga de las imágenes
+      const images = [...moviePosters, ...tvPosters].map((src) => {
+        const img = new Image();
+        img.src = src;
+        return img;
+      });
+
+      // Verificamos si todas las imágenes se han cargado
+      Promise.all(images.map((img) => new Promise((resolve) => img.onload = resolve)))
+        .then(() => setImagesLoaded(true));
+    }, [moviePosters, tvPosters]);
+
+    if (!imagesLoaded) {
+      return (
+        <div className="carousel-container">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Cargando...</span>
+          </Spinner>
+        </div>
+      );
+    }
+
     return (
-      <Carousel activeIndex={index} onSelect={() => { }} interval={null}>
-        {[...moviePosters, ...tvPosters].map((poster, idx) => (
-          <Carousel.Item key={idx}>
-            <img src={poster} alt={`Slide ${idx}`} />
-          </Carousel.Item>
-        ))}
-      </Carousel>
+        <Carousel activeIndex={index} onSelect={() => { }} interval={null}>
+          {[...moviePosters, ...tvPosters].map((poster, idx) => (
+            <Carousel.Item key={idx}>
+              <img src={poster} alt={`Slide ${idx}`} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
     );
   };
 
@@ -112,8 +137,7 @@ export default function Welcome() {
         <p>
           Aquí encontraras las mejores{" "}
           <span className="text-warning">peliculas</span> y{" "}
-          <span className="text-warning">series</span> tanto nuevas
-          como clásicas.
+          <span className="text-warning">series</span> nuevas y clásicas.
         </p>
         <Link id="startNow" className="btn btn-warning border border-2 border-light" to="/home">Empezar a ver</Link>
       </div>
