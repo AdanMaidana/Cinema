@@ -96,7 +96,7 @@ export default function Welcome() {
     if (!imagesLoaded) {
       return (
         <div className="carousel-container">
-          <Spinner animation="border" role="status">
+          <Spinner animation="border" role="status" variant="light">
             <span className="visually-hidden">Cargando...</span>
           </Spinner>
         </div>
