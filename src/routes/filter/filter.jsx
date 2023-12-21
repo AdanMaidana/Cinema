@@ -584,13 +584,8 @@ export default function Filter({ section }) {
               />
             }
 
-            {!resultsFound && contentToDisplay && !loading && (
-              // Retraso de 1.5 segundos antes de mostrar el mensaje
-              <div className="d-flex justify-content-center align-items-center flex-grow-1">
-                {showNoResultsMessage && (
-                  <p className="text-danger text-center fs-2 p-3">No se encontraron resultados con los filtros seleccionados.</p>
-                )}
-              </div>
+            {showNoResultsMessage && (
+              <p className="text-danger text-center fs-2 p-3">No se encontraron resultados con los filtros seleccionados.</p>
             )}
 
             {(contentToDisplay !== "" && resultsFound && (searchContent.length > 0 || discoverContent.length > 0)) && (

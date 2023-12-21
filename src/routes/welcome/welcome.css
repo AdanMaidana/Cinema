@@ -116,6 +116,7 @@
     p,
     #startNow {
       font-size: 1.8rem;
+      padding: 1rem 1.5rem;
     }
   }
 }
