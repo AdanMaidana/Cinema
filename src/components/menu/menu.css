@@ -11,11 +11,20 @@
 
 
 /* ICONO INICIO */
-#menu svg path {
-  transition: all .3s ease;
-}
-#menu svg:hover path{
-  fill: #2bff0d;
+#menu {
+
+  svg {
+    width: 1.5rem;
+    height: auto;
+  }
+
+  svg path {
+    transition: all .3s ease;
+  }
+
+  svg:hover path {
+    fill: #2bff0d;
+  }
 }
 
 
@@ -24,9 +33,10 @@
   position: relative;
 }
 
-.navbar-button button  {
+.navbar-button button {
   background-color: transparent;
   transition: all .3s ease;
+  font-size: 1rem;
 }
 
 .navbar-button:hover button {
@@ -35,7 +45,8 @@
 
 #menu .btn:hover .dropdown-list {
   opacity: 1;
-  max-height: 150px; /* Ajusta según sea necesario */
+  max-height: 150px;
+  /* Ajusta según sea necesario */
 }
 
 .button-active {
@@ -45,12 +56,13 @@
 
 /*BOTONES MENU DESPLEGABLE*/
 .dropdown-list {
+  display: hidden;
   position: absolute;
   background-color: rgb(255, 255, 255);
   text-align: left;
   padding: 0;
   border-radius: 10px;
-  width: 125px;
+  width: max-content;
   border: 2px solid white;
   opacity: 0;
   max-height: 0;
@@ -61,7 +73,7 @@
 .dropdown-list a {
   display: block;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: .8rem;
   text-decoration: none;
   color: rgb(44, 44, 44);
 }
@@ -72,7 +84,7 @@
 
 
 .dropdown-list a:hover {
-  background-color: rgba(43, 255, 15, 0.8); 
+  background-color: rgba(43, 255, 15, 0.8);
   color: black;
   width: auto;
 }
@@ -81,3 +93,32 @@
   color: #2bff0d;
 }
 
+
+@media screen and (width > 300px) {
+  .navbar-button button {
+    font-size: 1.5rem;
+  }
+
+  #menu svg {
+    width: 2rem;
+    height: auto;
+  }
+}
+
+
+@media screen and (width > 576px) {
+  .navbar-button button {
+    font-size: 2rem;
+  }
+
+
+  .dropdown-list a {
+    font-size: 1.2rem;
+  }
+
+
+  #menu svg {
+    width: 2.5rem;
+    height: auto;
+  }
+}

@@ -8,10 +8,8 @@ export default function Menu({ section }) {
       <menu className="d-flex list-unstyled align-items-center m-0 h-100 column-gap-4 column-gap-md-5 px-3">
         {/* BOTON INICIO */}
         <li>
-          <Link to="/home" className="btn fs-2 border-0 p-0 m-0">
+          <Link to="/home" className="btn border-0 p-0 m-0">
             <svg
-              width="48"
-              height="48"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -24,9 +22,9 @@ export default function Menu({ section }) {
         </li>
 
         {/* BOTON PELICULAS */}
-        <li className="btn fs-2 border-0 p-0 m-0 navbar-button">
+        <li className="btn border-0 p-0 m-0 navbar-button">
           <button
-            className={`fs-2 p-0 m-0 border-0 ${
+            className={`p-0 m-0 border-0 ${
               section === "movie" ||
               section === "/movie/popular" ||
               section === "/movie/top_rated"
@@ -44,9 +42,9 @@ export default function Menu({ section }) {
         </li>
 
         {/* BOTON SERIES */}
-        <li className="btn fs-2 border-0 p-0 m-0 navbar-button">
+        <li className="btn border-0 p-0 m-0 navbar-button">
           <button
-            className={`fs-2 p-0 m-0 border-0 ${
+            className={`p-0 m-0 border-0 ${
               section === "tv" ||
               section === "/tv/popular" ||
               section === "/tv/top_rated"

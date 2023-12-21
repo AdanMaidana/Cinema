@@ -104,13 +104,13 @@ export default function Welcome() {
     }
 
     return (
-        <Carousel activeIndex={index} onSelect={() => { }} interval={null}>
-          {[...moviePosters, ...tvPosters].map((poster, idx) => (
-            <Carousel.Item key={idx}>
-              <img src={poster} alt={`Slide ${idx}`} />
-            </Carousel.Item>
-          ))}
-        </Carousel>
+      <Carousel activeIndex={index} onSelect={() => { }} interval={null}>
+        {[...moviePosters, ...tvPosters].map((poster, idx) => (
+          <Carousel.Item key={idx}>
+            <img src={poster} alt={`Slide ${idx}`} />
+          </Carousel.Item>
+        ))}
+      </Carousel>
     );
   };
 
@@ -142,8 +142,9 @@ export default function Welcome() {
         <Link id="startNow" className="btn btn-warning border border-2 border-light" to="/home">Empezar a ver</Link>
       </div>
 
-      <AutoCarousel moviePosters={moviePosters} tvPosters={tvPosters} />
-
+      <div id="carousel">
+        <AutoCarousel moviePosters={moviePosters} tvPosters={tvPosters} />
+      </div>
     </section>
 
 

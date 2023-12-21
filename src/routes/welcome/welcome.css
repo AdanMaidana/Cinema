@@ -1,19 +1,22 @@
 #welcome {
-  height: 100dvh;
+  min-height: 100dvh;
   margin: 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 #introduction {
   color: white;
   text-align: center;
-  padding: 1rem .5rem 0 .5rem;
-  padding-bottom: 0;
+  padding: 0 1rem;
+
+
+
 
   h1 {
+    padding: 1rem 0;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
   }
 
   #cinema {
@@ -25,24 +28,32 @@
     font-weight: 900;
   }
 
-  p,  #startNow {
-    font-size: 1.2rem;
+  p,
+  #startNow {
+    font-size: 1.3rem;
+    text-wrap: balance;
   }
 
+  #startNow {
+    margin-top: 1rem;
+  }
+
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel {
   padding: 2rem;
   margin: 0 auto;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  flex-grow: 2;
-  max-width: 75%;
+  max-width: 80%;
 
 
   img {
-    max-width: 100%;
+    width: 100%;
     border-radius: 10px;
     border: 2px solid white;
   }
@@ -55,7 +66,7 @@
   display: none !important;
 }
 
-@media screen and (width >=768px) {
+@media screen and (width >=576px) {
   #welcome {
     flex-direction: row;
     justify-content: center;
@@ -63,7 +74,7 @@
   }
 
   #introduction {
-    width: 60%;
+    width: 55%;
 
 
     h1 {
@@ -74,21 +85,26 @@
       font-size: 3rem;
     }
 
-    p,  #startNow {
+    p,
+    #startNow {
       font-size: 1.5rem;
     }
   }
 
-  .carousel {
-    width: 40%;
+  #carousel {
+    width: 45%;
     max-width: 500px;
+
+    .carousel {
+      width: 100%;
+    }
   }
+
+
 }
 
 @media screen and (width >=1200px) {
   #introduction {
-    width: 70%;
-
     h1 {
       font-size: 4rem;
     }
@@ -97,12 +113,9 @@
       font-size: 5rem;
     }
 
-    p,  #startNow {
+    p,
+    #startNow {
       font-size: 1.8rem;
     }
-  }
-
-  .carousel {
-    width: 30%;
   }
 }
