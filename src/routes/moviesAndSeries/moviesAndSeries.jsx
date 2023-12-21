@@ -68,14 +68,8 @@ export default function MoviesAndSeries({ section }) {
     let items = [];
     const maxPagesToShow = 5;
 
-    // Agregamos los botones de Primero y Anterior
-    items.push(
-      <Pagination.First
-        key="first"
-        onClick={() => handlePageChange(1)}
-        disabled={currentPage === 1}
-      />
-    );
+    // Agregamos el boton de anterior
+   
     items.push(
       <Pagination.Prev
         key="prev"
@@ -101,7 +95,7 @@ export default function MoviesAndSeries({ section }) {
       );
     }
 
-    // Agregamos los botones de Siguiente y Último
+    // Agregamos el boton de Siguiente 
     items.push(
       <Pagination.Next
         key="next"
@@ -109,13 +103,7 @@ export default function MoviesAndSeries({ section }) {
         disabled={currentPage === totalPages}
       />
     );
-    items.push(
-      <Pagination.Last
-        key="last"
-        onClick={() => handlePageChange(totalPages)}
-        disabled={currentPage === totalPages}
-      />
-    );
+  
 
     return items;
   };

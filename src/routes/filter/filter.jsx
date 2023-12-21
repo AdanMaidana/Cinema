@@ -9,6 +9,8 @@ import PropTypes from 'prop-types';
 
 
 export default function Filter({ section }) {
+  //ESTADO PARA MANEJAR EL DELAY DEL MENSAJE DE NO SE ENCONTRO NINGUN RESULTADO
+  const [showNoResultsMessage, setShowNoResultsMessage] = useState(false);
   //ESTADO PARA CONTROLAR SI SE ENCONTRO CONTENIDO SEGUN LOS FILTROS DEL USUARIO
   const [resultsFound, setResultsFound] = useState(true);
   //ESTADO PARA MOSTRAR QUE SE ESTA CARGANDO EL CONTENIDO
@@ -55,14 +57,7 @@ export default function Filter({ section }) {
     let items = [];
     const maxPagesToShow = 5;
 
-    // Agregamos los botones de Primero y Anterior
-    items.push(
-      <Pagination.First
-        key="first"
-        onClick={() => handlePageChange(1)}
-        disabled={currentPage === 1}
-      />
-    );
+    // Agregamos el boton Anterior
     items.push(
       <Pagination.Prev
         key="prev"
@@ -88,18 +83,11 @@ export default function Filter({ section }) {
       );
     }
 
-    // Agregamos los botones de Siguiente y Último
+    // Agregamos el boton de Siguiente
     items.push(
       <Pagination.Next
         key="next"
         onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-      />
-    );
-    items.push(
-      <Pagination.Last
-        key="last"
-        onClick={() => handlePageChange(totalPages)}
         disabled={currentPage === totalPages}
       />
     );
@@ -239,6 +227,7 @@ export default function Filter({ section }) {
 
   /* FUNCIÓN PARA FILTRAR CON DISCOVER (MAS OPCIONES DE FILTRO) */
   const discover = async () => {
+    setLoading(true);
     const apiKey = "d0d395de73e3847bf1733bffabf19cc8";
     const lenguaje = "es-MX";
     let url = `https://api.themoviedb.org/3/discover/${section}?include_adult=false${section === "tv" ? "&include_null_first_air_dates=false" : ""}&language=${lenguaje}&page=${currentPage}&sort_by=${orderBy && orderSelected ? orderSelected : "popularity.desc"}${section === "tv" ? `&first_air_date_year=${titleYear}` : `&primary_release_year=${titleYear}`}${filterByGenres && selectedGenres.length !== 0 ? `&with_genres=${selectedGenres.join(",")}` : ""}&api_key=${apiKey}`
@@ -268,6 +257,7 @@ export default function Filter({ section }) {
 
   /* FUNCIÓN PARA FILTRAR CON SEARCH (MENOS OPCIONES DE FILTRO) */
   const search = async () => {
+    setLoading(true);
     const apiKey = "d0d395de73e3847bf1733bffabf19cc8";
     const lenguaje = "es-MX";
     let url = `https://api.themoviedb.org/3/search/${section}?query=${searchTitle}${section === "tv" ? `&first_air_date_year=${titleYear}` : `&primary_release_year=${titleYear}`}&include_adult=false&language=${lenguaje}&page=${currentPage}&api_key=${apiKey}`
@@ -416,6 +406,17 @@ export default function Filter({ section }) {
   ];
 
   const genreList = section === "movie" ? movieGenres : tvGenres;
+
+
+  useEffect(() => {
+    if (!resultsFound && contentToDisplay && !loading) {
+      // Mostrar el mensaje de no resultados inmediatamente
+      setShowNoResultsMessage(true);
+    } else {
+      // Reiniciar el estado cuando los resultados se encuentran o el contenido cambia
+      setShowNoResultsMessage(false);
+    }
+  }, [resultsFound, contentToDisplay, loading]);
 
   return (
     <>
@@ -584,9 +585,13 @@ export default function Filter({ section }) {
             }
 
             {!resultsFound && contentToDisplay && !loading && (
-              <p className="d-flex justify-content-center align-items-center flex-grow-1 text-danger text-center fs-2 p-3">No se encontraron resultados con los filtros seleccionados.</p>
+              // Retraso de 1.5 segundos antes de mostrar el mensaje
+              <div className="d-flex justify-content-center align-items-center flex-grow-1">
+                {showNoResultsMessage && (
+                  <p className="text-danger text-center fs-2 p-3">No se encontraron resultados con los filtros seleccionados.</p>
+                )}
+              </div>
             )}
-
 
             {(contentToDisplay !== "" && resultsFound && (searchContent.length > 0 || discoverContent.length > 0)) && (
               <Pagination className="justify-content-center" size="lg">{generatePaginationItems()}</Pagination>
