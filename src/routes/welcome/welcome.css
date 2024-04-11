@@ -36,6 +36,11 @@
 
   #startNow {
     margin-top: 1rem;
+    transition: .3s ease;
+  }
+
+  #startNow:hover {
+    transform: scale(1.1);
   }
 
 }
